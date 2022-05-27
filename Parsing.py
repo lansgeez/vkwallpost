@@ -40,7 +40,6 @@ class Pic():
        
     def sort(self):
         a=[]
-        count=0
         global writef
 
         f=open(f'{notsort}.txt')
@@ -58,7 +57,6 @@ class Pic():
 
             if int(likes)>19:
                 img = self.browser.find_element_by_id('big_preview_cont').find_element_by_tag_name('a').get_attribute('href')
-                count+=1
                 f = open(f'{sort}.txt', 'a')
                 f.write(img+'\n')
                 f.write(src)
@@ -68,7 +66,6 @@ class Pic():
             else:
                 print('Пропуск.')
                 print("--------------")
-        print('Итого -', count, 'постов')
             
     def close_browser(self):
 
